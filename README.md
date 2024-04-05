@@ -29,22 +29,20 @@ RegisterNumber: 212221040055
 ```
 ```
 import pandas as pd
-data=pd.read_csv("Salary.csv")
+data = pd.read_csv("/content/Salary.csv")
 data.head()
 data.info()
 data.isnull().sum()
 from sklearn.preprocessing import LabelEncoder
-le=LabelEncoder()
-data["Position"]=le.fit_transform(data["Position"])
-data.head()
-x = data[["Position","Level"]]
-x.head()
-y = data["Salary"]
-y.head()
+le = LabelEncoder()
+data["Position"]= le.fit_transform(data["Position"])
+data.head()  
+x= data[["Position","Level"]]
+y= data["Salary"]
 from sklearn.model_selection import train_test_split
 x_train,x_test,y_train,y_test = train_test_split(x,y,test_size=0.2,random_state=2)
 from sklearn.tree import DecisionTreeRegressor
-dt=DecisionTreeRegressor()
+dt = DecisionTreeRegressor()
 dt.fit(x_train,y_train)
 y_pred=dt.predict(x_test)
 from sklearn import metrics
@@ -66,9 +64,10 @@ dt.predict([[5,6]])
 ### 5. MSE value
 ![image](https://github.com/balaji-21005757/Implementation-of-Decision-Tree-Regressor-Model-for-Predicting-the-Salary-of-the-Employee/assets/94372294/65f1a917-84d9-4eea-b103-5abff8aa1d3a)
 ### 6. r2 value
-![image](https://github.com/balaji-21005757/Implementation-of-Decision-Tree-Regressor-Model-for-Predicting-the-Salary-of-the-Employee/assets/94372294/0c36d354-e42d-4ba1-82d1-f4dfd6466de2)
+![image](https://github.com/Hemavathi131/Implementation-of-Decision-Tree-Regressor-Model-for-Predicting-the-Salary-of-the-Employee/assets/128135323/50024dfc-dcb1-42be-9106-bcdb9e7ecb6e)
+
 ### 7. data prediction
-![image](https://github.com/balaji-21005757/Implementation-of-Decision-Tree-Regressor-Model-for-Predicting-the-Salary-of-the-Employee/assets/94372294/d8458904-8abe-445d-a4ad-9493174ab1ac)
+![image](https://github.com/Hemavathi131/Implementation-of-Decision-Tree-Regressor-Model-for-Predicting-the-Salary-of-the-Employee/assets/128135323/45c31b1c-0920-45d0-ac9a-6f6c22f63216)
 
 ## Result:
 Thus the program to implement the Decision Tree Regressor Model for Predicting the Salary of the Employee is written and verified using python programming.
